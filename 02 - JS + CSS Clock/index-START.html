@@ -79,7 +79,7 @@
       var now = new Date();
       var seconds = now.getSeconds();
       console.log(seconds);
-      var secondsDegrees = (seconds / 60) * 360 /* gets rotational degree for every second */
+      var secondsDegrees = ((seconds / 60) * 360) + 90 /* gets rotational degree for every second */
       secondHand.style.transform = `rotate(${secondsDegrees}deg)`
     }
     setInterval(setDate, 1000);
