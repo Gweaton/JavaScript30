@@ -61,12 +61,28 @@
       background:black;
       position: absolute;
       top:50%;
+      transform-origin: 100%; /* rotation will pivot on the right hand side (50% by default, rotates from centre) */
+      transform: rotate(90deg); /* clock will rotate so hands are at 12. */
+      transition: 0.05s; /* each rotation will take 0.5s to complete */
+      transition-timing-function: cubic-bezier(0.18, 1.1, 0, 2.15); /* makes ticking effect*/
+
     }
 
   </style>
 
+
   <script>
 
+  var secondHand = document.querySelector('.second-hand')
+
+    setDate = function() {
+      var now = new Date();
+      var seconds = now.getSeconds();
+      console.log(seconds);
+      var secondsDegrees = (seconds / 60) * 360 /* gets rotational degree for every second */
+      secondHand.style.transform = `rotate(${secondsDegrees}deg)`
+    }
+    setInterval(setDate, 1000);
 
   </script>
 </body>
