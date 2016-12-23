@@ -61,8 +61,17 @@
 
   var addFeedback = function(event) {
     var key = document.querySelector(`div[data-key = "${event.keyCode}"]`);
+    if (key === null)
+      return;
     key.classList.add('playing');
-  }
+    removeFeedback(event);
+  };
+  var removeFeedback = function(event) {
+    if (event.propertyName != 'transform') {
+      return
+    }
+    event.target.classList.remove('playing');
+  };
   var playSound = function(event) {
     var audio = document.querySelector(`audio[data-key = "${event.keyCode}"]`);
     if (audio === null)
@@ -71,6 +80,9 @@
     addFeedback(event);
     audio.play();
   };
+
+  var keys = document.querySelectorAll('.key')
+  keys.forEach(key => key.addEventListener('transitionend', removeFeedback))
 
 
   window.addEventListener('keydown', playSound)
