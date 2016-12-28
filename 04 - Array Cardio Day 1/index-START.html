@@ -46,9 +46,7 @@
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
-    var summedAges = inventors.reduce(function(total, inventor) {
-      return total + (inventor.passed - inventor.year);
-    }, 0);
+    var summedAges = inventors.reduce((total, inventor) => total + (inventor.passed - inventor.year), 0);
     console.log(summedAges);
 
     // 5. Sort the inventors by years lived
@@ -71,6 +69,7 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
 
   </script>
 </body>
