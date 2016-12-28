@@ -62,14 +62,15 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-    // var sortedByLastName = people.sort(function(person1, person2) {
-    //   console.log(person1.split(", ")[1][0]);
-    // })
 
     var filterLastNames = people.map(function(person) {
       return person.split(", ")[0];
     });
-    console.log(filterLastNames);
+
+    var sortedByLastName = filterLastNames.sort(function(person1, person2) {
+      return person1 > person2 ? 1 : -1
+    });
+    console.log(sortedByLastName);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
