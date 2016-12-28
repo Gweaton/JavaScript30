@@ -61,9 +61,11 @@
     // 7. sort Exercise
     // Sort the people alphabetically by last name
 
-    var filterLastNames = people.map(person => person.split(", ")[0]);
-
-    var sortedByLastName = filterLastNames.sort((person1, person2) => person1 > person2 ? 1 : -1);
+    var sortedByLastName = people.sort(function(person1, person2) {
+      var [person1First, person1Second] = person1.split(", ");
+      var [person2First, person2Second] = person2.split(", ");
+      return person1First > person2First ? 1 : -1;
+    });
     console.log(sortedByLastName);
 
     // 8. Reduce Exercise
