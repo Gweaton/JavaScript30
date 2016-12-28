@@ -62,9 +62,7 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-    var sortedByLastName = inventors.sort(function(inventor1, inventor2) {
-       return inventor1.last[0] > inventor2.last[0] ? 1 : -1
-    });
+    var sortedByLastName = inventors.sort((inventor1, inventor2) => (inventor1.last[0] > inventor2.last[0]) ? 1 : -1)
     console.table(sortedByLastName);
 
     // 8. Reduce Exercise
