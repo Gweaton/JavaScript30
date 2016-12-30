@@ -48,6 +48,15 @@
     // Find the comment with this ID
     // delete the comment with the ID of 823423
 
+    var index = comments.findIndex(function(comment) {
+      if (comment.id === 823423) {
+        return true;
+      }
+    });
+
+    var deleted = comments.splice(index, 1);
+    console.log(deleted)
+
   </script>
 </body>
 </html>
